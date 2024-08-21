@@ -1,0 +1,253 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.274); /* Semi-transparent background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 100px;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Alinea la barra de búsqueda a la derecha */
+    background-color: #ffffff; /* Fondo blanco para destacar los elementos de la barra */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 5px; /* Espacio interno alrededor de los elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+.search-bar input {
+    padding: 10px; /* Mayor padding para un campo de texto más espacioso */
+    font-size: 16px;
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    color: #333333; /* Color del texto */
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    margin-right: 10px; /* Espacio entre el campo de texto y el botón */
+    transition: background-color 0.3s, border 0.3s; /* Transiciones suaves */
+}
+
+.search-bar input:focus {
+    background-color: #ffffff; /* Cambia el fondo al enfocarse */
+    border: 1px solid #4169e1; /* Borde azul royal al enfocarse */
+    outline: none; /* Elimina el borde por defecto del navegador */
+}
+
+.search-bar button {
+    padding: 10px 16px; /* Mayor padding para los botones */
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #4169e1; /* Color de fondo azul royal */
+    color: #ffffff;
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.search-bar button:hover {
+    background-color: #1e90ff; /* Color de fondo al pasar el mouse (azul dodger) */
+    transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+}
+
+.search-bar button:last-child {
+    background-color: #480dd3; /* Color de fondo para el botón "Clear" (tomate) */
+}
+
+.search-bar button:last-child:hover {
+    background-color: #480dd3; /* Color de fondo al pasar el mouse (rojo oscuro) */
+}
+
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('img/pexels-grzegorz-tomicki-98930551-10183533.jpg') no-repeat center center/cover;
+}
+
+.hero button {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none; /* Removed border */
+    border-radius: 4px;
+    background-color: #92002c; /* Custom background color */
+    color: #ffffff;
+    transition: background-color 0.3s;
+    margin-left: 180px;
+    margin-top: 30px;
+}
+
+.hero button:hover {
+    background-color: #530031; /* Dodger blue background for hover state */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.intro h1 {
+    font-size: 48px;
+    margin: 0;
+    margin-left: 180px;
+}
+
+.intro p {
+    font-size: 24px;
+    margin: 10px 0 0;
+    margin-left: 120px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.226); /* Adjusted background color */
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-left: 0; /* Reset margin for small screens */
+        padding: 10px;
+        box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    }
+
+    .search-bar input {
+        width: calc(100% - 110px); /* Adjust width to fit within the container */
+        margin-right: 10px;
+    }
+
+    .search-bar button {
+        width: 50px; /* Adjust button width for smaller screens */
+        font-size: 14px;
+        padding: 5px;
+        margin-right: 0; /* Reset margin */
+    }
+}
+
+/* Social Media Icons Styles */
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Align icons vertically */
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 10px; /* Adjust left position as needed */
+    transform: translateY(-50%); /* Center vertically by offsetting half of its height */
+    z-index: 1000; /* Ensure icons are above other content */
+}
+
+.social-icon {
+    display: block;
+    margin-bottom: 8px; /* Space between icons */
+}
+
+.social-icon img {
+    width: 24px; /* Smaller size for icons */
+    height: auto; /* Maintain aspect ratio */
+    transition: opacity 0.3s;
+}
+
+.social-icon img:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+}
+
+.about-us {
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #333333;
+}
+
+.about-us h1, .about-us h2 {
+    color: #2c3e50;
+}
